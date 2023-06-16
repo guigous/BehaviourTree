@@ -19,6 +19,7 @@ tree("Attack")
 			TargetPlayer
 			LookAtTarget
 			Fire
+			Wait(1.0)
 
 tree("Dead")
 	sequence

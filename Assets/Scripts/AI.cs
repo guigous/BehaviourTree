@@ -111,7 +111,7 @@ public class AI : MonoBehaviour
         Vector3 playerDirection = player.position - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(playerDirection);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
-        Task.current.Succeed();
+        
     }
 
     [Task]
@@ -120,7 +120,7 @@ public class AI : MonoBehaviour
         Vector3 playerDirection = player.position - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(playerDirection);
         this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
-        Task.current.Succeed();
+        
     }
 
 
