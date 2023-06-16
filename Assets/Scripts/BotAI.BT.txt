@@ -1,0 +1,31 @@
+
+//raiz que roda dois comportamentos em paralelo
+tree("Root")
+	parallel
+		repeat mute tree("Patrol")
+		repeat mute tree("Dead")
+		
+
+tree("Patrol")
+	sequence
+		tree("Attack")
+		while IsHealthLessThan(40.0)
+			sequence
+				tree("Wander")
+
+tree("Attack")
+	while SeePlayer
+		sequence
+			TargetPlayer
+			LookAtTarget
+			Fire
+
+tree("Dead")
+	sequence
+		while IsHealthLessThan(0.1)
+			Explode
+
+tree("Wander")
+	sequence
+		PickRandomDestination
+		MoveToDestination
